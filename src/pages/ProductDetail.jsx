@@ -20,7 +20,7 @@ const TOAST_STYLE = {
     border: '1px solid #3f3f4a',
     borderRadius: '12px',
   },
-  iconTheme: { primary: '#be185d', secondary: '#fff' },
+  iconTheme: { primary: '#c2410c', secondary: '#fff' },
 }
 
 // ─── Size Selector ─────────────────────────────────────────────────────────────

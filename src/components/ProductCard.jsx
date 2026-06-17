@@ -37,7 +37,7 @@ export default function ProductCard({ product, className = '' }) {
           border: '1px solid #3f3f4a',
           borderRadius: '12px',
         },
-        iconTheme: { primary: '#be185d', secondary: '#fff' },
+        iconTheme: { primary: '#c2410c', secondary: '#fff' },
       })
       setLoading(false)
     }, 300)
