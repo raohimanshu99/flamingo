@@ -1,16 +1,64 @@
-# React + Vite
+# Flamingo 🦩
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A clothing e-commerce site I'm building to practice React — dark-themed, animated, and structured the way real shopping apps are.
 
-Currently, two official plugins are available:
+> Work in progress. Built stage by stage: homepage → category browsing → product detail page.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## What it does
 
-## React Compiler
+- **Homepage** — auto-advancing hero slider, scrolling offers ticker, trust badges, Men/Women/Kids category cards, trending tags, and a new arrivals grid
+- **Category pages** — browse by gender, filter by sub-category (shirts, jeans, dresses, etc.), sort by price or rating
+- **Product detail page** — full product images, size selector (XS–XXXL), Add to Bag, Buy Now, wishlist, share (copy link / Twitter / Facebook), material & care info, seller info, and related products
+- **Cart** — slide-in drawer, quantity controls, free delivery threshold, persists in localStorage so it survives a refresh
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Built with
 
-## Expanding the ESLint configuration
+- **React 18** + **Vite**
+- **React Router** for navigation
+- **Tailwind CSS** for styling
+- **Context API + useReducer** for cart state
+- **react-hot-toast** for notifications
+- **lucide-react** for icons
+- **[FakeStoreAPI](https://fakestoreapi.com/)** for product data
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Running it locally
+
+```bash
+git clone https://github.com/raohimanshu99/flamingo.git
+cd flamingo
+npm install
+npm run dev
+```
+
+Open `http://localhost:5173`.
+
+## Project structure
+
+```
+src/
+├── components/    # Navbar, CartDrawer, ProductCard, Footer, SkeletonCard
+├── context/       # CartContext (global cart state)
+├── data/          # category config, sizes, fabric/seller mock data
+├── hooks/         # useProducts (API fetching)
+├── pages/         # Home, Category, ProductDetail
+├── App.jsx        # routes
+└── main.jsx       # entry point
+```
+
+## Notes
+
+- Prices are converted from FakeStoreAPI's USD values to INR for display
+- Fabric and seller details are mocked since the API doesn't provide them
+- No backend yet — cart is local-only, checkout doesn't process real payments
+
+## To-do
+
+- [ ] Search results page
+- [ ] Wishlist page
+- [ ] User authentication
+- [ ] Checkout flow
+- [ ] Deploy to Vercel
+
+---
+
+Built by [Himanshu Yadav](https://github.com/raohimanshu99)
