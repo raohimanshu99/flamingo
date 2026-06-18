@@ -194,7 +194,7 @@ export default function ProductDetail() {
       <div className="pt-20 min-h-screen">
         <div className="section">
           {/* Breadcrumb */}
-          <nav className="flex items-center gap-2 text-sm text-surface-500 mb-8">
+          <nav className="flex items-center gap-2 text-sm text-surface-400 mb-8">
             <Link to="/" className="hover:text-surface-300 transition-colors">Home</Link>
             <span>/</span>
             <Link to={`/category/${product.category?.includes('women') ? 'women' : 'men'}`}
@@ -247,16 +247,16 @@ export default function ProductDetail() {
                   ))}
                   <span className="text-sm font-bold text-surface-200 ml-1">{rating.toFixed(1)}</span>
                 </div>
-                <span className="text-sm text-surface-500">{reviews.toLocaleString()} reviews</span>
+                <span className="text-sm text-surface-400">{reviews.toLocaleString()} reviews</span>
               </div>
 
               {/* Price */}
               <div className="flex items-baseline gap-3">
                 <span className="font-display text-3xl font-bold text-surface-100">{formatINR(price)}</span>
-                <span className="text-lg text-surface-500 line-through">{formatINR(mrp)}</span>
+                <span className="text-lg text-surface-400 line-through">{formatINR(mrp)}</span>
                 <span className="badge badge-brand text-sm">{discount}% OFF</span>
               </div>
-              <p className="text-xs text-surface-500 -mt-4">Inclusive of all taxes</p>
+              <p className="text-xs text-surface-400 -mt-4">Inclusive of all taxes</p>
 
               {/* Size */}
               <SizeSelector selected={size} onSelect={setSize} />

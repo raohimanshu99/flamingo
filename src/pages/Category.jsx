@@ -141,7 +141,7 @@ export default function Category() {
         {!loading && sorted.length === 0 && (
           <div className="text-center py-24">
             <p className="text-surface-400 text-lg">No products found.</p>
-            <p className="text-surface-500 text-sm mt-1">Try selecting a different category.</p>
+            <p className="text-surface-400 text-sm mt-1">Try selecting a different category.</p>
           </div>
         )}
       </div>
