@@ -59,10 +59,10 @@ export default function CartDrawer() {
           {items.length === 0 ? (
             <div className="flex flex-col items-center justify-center h-full gap-4 text-center">
               <div className="w-20 h-20 rounded-2xl bg-surface-800 flex items-center justify-center">
-                <ShoppingBag size={32} className="text-surface-500" />
+                <ShoppingBag size={32} className="text-surface-400" />
               </div>
               <p className="text-surface-400 font-medium">Your bag is empty</p>
-              <p className="text-surface-500 text-sm">Add something you love!</p>
+              <p className="text-surface-400 text-sm">Add something you love!</p>
               <button onClick={closeCart} className="btn-brand mt-2">
                 Start Shopping
               </button>
@@ -97,7 +97,7 @@ export default function CartDrawer() {
                     </div>
                     <button
                       onClick={() => removeItem(item.id, item.size)}
-                      className="text-surface-500 hover:text-red-400 transition-colors p-1"
+                      className="text-surface-400 hover:text-red-400 transition-colors p-1"
                     >
                       <Trash2 size={14} />
                     </button>
@@ -123,7 +123,7 @@ export default function CartDrawer() {
                 </span>
               </div>
               {deliveryFee > 0 && (
-                <p className="text-xs text-surface-500">
+                <p className="text-xs text-surface-400">
                   Add {formatINR(999 - totalPrice)} more for free delivery
                 </p>
               )}

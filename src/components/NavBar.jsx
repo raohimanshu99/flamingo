@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import {
-  ShoppingBag, Search, Heart, Menu, X, ChevronDown, Flame,
+  ShoppingBag, Search, Heart, Menu, X,
 } from 'lucide-react'
 import { useCart } from '../context/CartContext'
 
@@ -9,7 +9,6 @@ const NAV_LINKS = [
   { label: 'Men',   href: '/category/men'   },
   { label: 'Women', href: '/category/women' },
   { label: 'Kids',  href: '/category/kids'  },
-  { label: 'Sale',  href: '/category/women', badge: 'Hot' },
 ]
 
 export default function Navbar() {
@@ -47,11 +46,8 @@ export default function Navbar() {
 
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 flex-shrink-0">
-            <div className="w-8 h-8 rounded-xl bg-gradient-brand flex items-center justify-center">
-              <Flame size={16} className="text-white" />
-            </div>
-            <span className="font-display text-xl font-bold text-surface-100 tracking-tight">
-              Flamingo<span className="text-brand-500">.</span>
+            <span className="font-display text-xl font-medium text-surface-100 tracking-tight">
+              Flamingo
             </span>
           </Link>
 
@@ -61,12 +57,9 @@ export default function Navbar() {
               <Link
                 key={link.label}
                 to={link.href}
-                className="relative flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium text-surface-300 hover:text-surface-100 hover:bg-surface-800 transition-all duration-150"
+                className="px-4 py-2 rounded-lg text-sm text-surface-300 hover:text-surface-100 hover:bg-surface-800 transition-colors duration-150"
               >
                 {link.label}
-                {link.badge && (
-                  <span className="badge badge-brand">{link.badge}</span>
-                )}
               </Link>
             ))}
           </nav>
@@ -95,7 +88,7 @@ export default function Navbar() {
             >
               <ShoppingBag size={20} />
               {totalItems > 0 && (
-                <span className="absolute -top-0.5 -right-0.5 min-w-[18px] h-[18px] bg-brand-600 text-white text-[10px] font-bold rounded-full flex items-center justify-center px-1 animate-fade-in">
+                <span className="absolute -top-0.5 -right-0.5 min-w-[16px] h-[16px] bg-brand-600 text-white text-[9px] font-semibold rounded-full flex items-center justify-center px-1">
                   {totalItems > 99 ? '99+' : totalItems}
                 </span>
               )}
@@ -142,9 +135,6 @@ export default function Navbar() {
                 className="flex items-center gap-2 px-4 py-3 rounded-xl text-surface-200 font-medium hover:bg-surface-800 transition-colors"
               >
                 {link.label}
-                {link.badge && (
-                  <span className="badge badge-brand">{link.badge}</span>
-                )}
               </Link>
             ))}
           </div>

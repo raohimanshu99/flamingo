@@ -46,7 +46,7 @@ export default function ProductCard({ product, className = '' }) {
   return (
     <Link
       to={`/product/${product.id}`}
-      className={`group relative flex flex-col card-dark overflow-hidden hover:-translate-y-1 transition-all duration-300 ${className}`}
+      className={`group relative flex flex-col card-dark overflow-hidden ${className}`}
     >
       {/* Image */}
       <div className="product-img-wrap bg-surface-700">
@@ -61,8 +61,8 @@ export default function ProductCard({ product, className = '' }) {
 
         {/* Discount badge */}
         {discount > 10 && (
-          <span className="absolute top-3 left-3 badge badge-brand">
-            {discount}% OFF
+          <span className="absolute top-2.5 left-2.5 bg-surface-950/80 text-surface-200 text-[10px] font-medium px-2 py-0.5 rounded-md">
+            -{discount}%
           </span>
         )}
 
@@ -83,37 +83,33 @@ export default function ProductCard({ product, className = '' }) {
         <button
           onClick={quickAddToCart}
           disabled={loading}
-          className="absolute bottom-3 left-3 right-3 bg-surface-950/90 backdrop-blur-sm text-surface-100 font-semibold text-sm py-2.5 rounded-xl flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300 hover:bg-brand-700 hover:text-white"
+          className="absolute bottom-2.5 left-2.5 right-2.5 bg-surface-950/90 text-surface-100 font-medium text-xs py-2.5 rounded-lg flex items-center justify-center gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-150 hover:bg-surface-900"
         >
-          <ShoppingBag size={14} />
-          {loading ? 'Adding...' : 'Quick Add (M)'}
+          <ShoppingBag size={13} />
+          {loading ? 'Adding...' : 'Quick add'}
         </button>
       </div>
 
       {/* Info */}
       <div className="p-3 flex flex-col gap-1 flex-1">
-        <p className="text-[11px] text-brand-500 font-semibold uppercase tracking-wider">
+        <p className="text-[11px] text-surface-400 uppercase tracking-wide">
           {product.category}
         </p>
-        <p className="text-sm font-medium text-surface-200 line-clamp-2 leading-snug flex-1">
+        <p className="text-sm text-surface-200 line-clamp-2 leading-snug flex-1">
           {product.title}
         </p>
 
         {/* Rating */}
-        <div className="flex items-center gap-1 mt-1">
-          <div className="flex items-center gap-0.5 bg-surface-700 rounded-md px-1.5 py-0.5">
-            <Star size={10} fill="#f59e0b" className="text-gold-500" />
-            <span className="text-[11px] font-bold text-gold-400">{rating.toFixed(1)}</span>
-          </div>
-          <span className="text-[11px] text-surface-500">({ratingCount.toLocaleString()})</span>
+        <div className="flex items-center gap-1 mt-0.5">
+          <Star size={11} fill="currentColor" className="text-surface400" />
+          <span className="text-[11px] text-surface-400">{rating.toFixed(1)} ({ratingCount.toLocaleString()})</span>
         </div>
 
         {/* Price */}
-        <div className="flex items-baseline gap-1.5 mt-1">
-          <span className="font-bold text-surface-100">{formatINR(price)}</span>
-          <span className="text-xs text-surface-500 line-through">{formatINR(mrp)}</span>
+        <div className="flex items-baseline gap-2 mt-1">
+          <span className="font-medium text-surface-100">{formatINR(price)}</span>
           {discount > 10 && (
-            <span className="text-xs text-green-400 font-semibold">{discount}% off</span>
+            <span className="text-xs text-surface-400 line-through">{formatINR(mrp)}</span>
           )}
         </div>
       </div>

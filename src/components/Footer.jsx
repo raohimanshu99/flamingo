@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import { Flame } from 'lucide-react'
 
 const SOCIAL = [
   { label: 'Instagram', symbol: '📸', href: '#' },
@@ -9,19 +8,13 @@ const SOCIAL = [
 
 export default function Footer() {
   return (
-    <footer className="bg-surface-900 border-t border-surface-700 mt-20">
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 py-16">
+    <footer className="bg-surface-900 border-t border-surface-800 mt-16">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 py-14">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
-
           {/* Brand */}
           <div className="col-span-2 md:col-span-1 space-y-4">
-            <Link to="/" className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-xl bg-gradient-brand flex items-center justify-center">
-                <Flame size={16} className="text-white" />
-              </div>
-              <span className="font-display text-xl font-bold text-surface-100">
-                Flamingo<span className="text-brand-500">.</span>
-              </span>
+            <Link to="/" className="font-display text-lg font-medium text-surface-100">
+              Flamingo
             </Link>
             <p className="text-sm text-surface-400 leading-relaxed max-w-xs">
               Fashion that makes you stand out. Curated styles for men, women & kids, delivered to your door.
@@ -40,7 +33,7 @@ export default function Footer() {
           <div className="space-y-4">
             <h4 className="font-semibold text-surface-100 text-sm">Shop</h4>
             <ul className="space-y-2.5">
-              {['Men', 'Women', 'Kids', 'New Arrivals', 'Sale'].map(item => (
+              {['Men', 'Women', 'Kids'].map(item => (
                 <li key={item}>
                   <Link to={`/category/${item.toLowerCase().replace(' ', '-')}`}
                     className="text-sm text-surface-400 hover:text-brand-400 transition-colors">
@@ -69,18 +62,27 @@ export default function Footer() {
           <div className="space-y-4">
             <h4 className="font-semibold text-surface-100 text-sm">Stay in the loop</h4>
             <p className="text-sm text-surface-400">Get early access to new drops and exclusive deals.</p>
-            <form onSubmit={e => e.preventDefault()} className="flex flex-col gap-2">
-              <input type="email" placeholder="your@email.com" className="input-dark text-sm" />
-              <button type="submit" className="btn-brand text-sm py-2.5">Subscribe</button>
+            <form
+              onSubmit={e => e.preventDefault()}
+              className="flex flex-col gap-2"
+            >
+              <input
+                type="email"
+                placeholder="your@email.com"
+                className="input-dark text-sm"
+              />
+              <button type="submit" className="btn-brand text-sm py-2.5">
+                Subscribe
+              </button>
             </form>
           </div>
         </div>
 
         <div className="mt-12 pt-6 border-t border-surface-700 flex flex-col sm:flex-row justify-between items-center gap-3">
-          <p className="text-xs text-surface-500">© 2025 Flamingo. All rights reserved.</p>
+          <p className="text-xs text-surface-400">© 2025 Flamingo. All rights reserved.</p>
           <div className="flex gap-4">
             {['Privacy Policy', 'Terms of Service', 'Cookie Policy'].map(link => (
-              <a key={link} href="#" className="text-xs text-surface-500 hover:text-surface-300 transition-colors">
+              <a key={link} href="#" className="text-xs text-surface-400 hover:text-surface-300 transition-colors">
                 {link}
               </a>
             ))}
